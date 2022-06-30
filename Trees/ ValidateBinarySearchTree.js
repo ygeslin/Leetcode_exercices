@@ -24,6 +24,18 @@
 
 // The number of nodes in the tree is in the range [1, 104].
 // -231 <= Node.val <= 231 - 1
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
 var isValidBST = function (root) {
     // This is the flag that will be returned
     // In the event we find a node that violates the BST property, we inverted the flag.
