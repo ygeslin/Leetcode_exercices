@@ -23,25 +23,25 @@
  * @param {number[]} nums
  * @return {number}
  */
- var longestConsecutive = function(nums) {
-	let max = 0;
-	let set = new Set(nums)
+ var longestConsecutive = function (nums) {
+		let max = 0;
+		let set = new Set(nums);
 
-	for (let n of set)
-	{
-			if (set.has(n - 1) === true)
-					continue
-			else
-					{
-							let localMax = 0
-							while (set.has(n) === true)
-									{
-											localMax++;
-											n++;
-									}
-							if (max < localMax)
-									max = localMax;
-					}
-	}
-	return max
-};
+		for (let n of set) {
+			if ( set.has( n - 1 ) === true )
+			{
+				continue;
+			}
+			else {
+				let localMax = 0;
+				while (set.has(n) === true) {
+					localMax++;
+					n++;
+				}
+				if (max < localMax) {
+					max = localMax;
+				}
+			}
+		}
+		return max;
+ };
