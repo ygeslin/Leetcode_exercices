@@ -76,3 +76,32 @@ var isValidSudoku = function(board) {
     }
     return true;
 };
+
+var isValidSudoku = function (board) {
+    const rows = [];
+    const cols = [];
+    const boxes = [];
+
+    for (let i = 0; i < 9; i++) {
+      rows.push(new Set());
+      cols.push(new Set());
+      boxes.push(new Set());
+    }
+
+    for (let r = 0; r < 9; r++) {
+      for (let c = 0; c < 9; c++) {
+        const value = board[r][c];
+        if (value === ".") continue;
+        const b = Math.floor(r / 3) * 3 + Math.floor(c / 3);
+
+        if (rows[r].has(value)) return false;
+        if (cols[c].has(value)) return false;
+        if (boxes[b].has(value)) return false;
+
+        rows[r].add(value);
+        cols[c].add(value);
+        boxes[b].add(value);
+      }
+    }
+    return true;
+  };
